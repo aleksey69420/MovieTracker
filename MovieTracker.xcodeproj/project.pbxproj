@@ -10,6 +10,8 @@
 		5B2EE1872824C2E700E0337A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EE1862824C2E700E0337A /* AppDelegate.swift */; };
 		5B2EE18B2824C2E700E0337A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EE18A2824C2E700E0337A /* ViewController.swift */; };
 		5B2EE1902824C2E700E0337A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B2EE18F2824C2E700E0337A /* Assets.xcassets */; };
+		5B2EE1C02828A1B700E0337A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EE1BF2828A1B700E0337A /* LoginVC.swift */; };
+		5B2EE1C32828A2BE00E0337A /* MTLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EE1C22828A2BE00E0337A /* MTLoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +20,8 @@
 		5B2EE18A2824C2E700E0337A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5B2EE18F2824C2E700E0337A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B2EE1942824C2E700E0337A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B2EE1BF2828A1B700E0337A /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		5B2EE1C22828A2BE00E0337A /* MTLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTLoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				5B2EE1862824C2E700E0337A /* AppDelegate.swift */,
+				5B2EE1C12828A29B00E0337A /* View */,
 				5B2EE19B2824C3D000E0337A /* Controller */,
 				5B2EE19A2824C3C000E0337A /* Support */,
 			);
@@ -70,8 +75,17 @@
 			isa = PBXGroup;
 			children = (
 				5B2EE18A2824C2E700E0337A /* ViewController.swift */,
+				5B2EE1BF2828A1B700E0337A /* LoginVC.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		5B2EE1C12828A29B00E0337A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5B2EE1C22828A2BE00E0337A /* MTLoginView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,7 +158,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B2EE18B2824C2E700E0337A /* ViewController.swift in Sources */,
+				5B2EE1C32828A2BE00E0337A /* MTLoginView.swift in Sources */,
 				5B2EE1872824C2E700E0337A /* AppDelegate.swift in Sources */,
+				5B2EE1C02828A1B700E0337A /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
