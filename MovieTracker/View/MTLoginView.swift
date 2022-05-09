@@ -10,9 +10,9 @@ import UIKit
 class MTLoginView: UIView {
 
 	private let stackView = UIStackView()
-	private let usernameTextField = UITextField()
+	private let usernameTextField = MTTextField(placeholder: "Username")
 	private let dividerView = UIView()
-	private let passwordTextField = UITextField()
+	private let passwordTextField = MTTextField(placeholder: "Password", isSecure: true)
 	
 	
 	override init(frame: CGRect) {
