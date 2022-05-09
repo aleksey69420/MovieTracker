@@ -13,6 +13,7 @@
 		5B2EE1C02828A1B700E0337A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EE1BF2828A1B700E0337A /* LoginVC.swift */; };
 		5B2EE1C32828A2BE00E0337A /* MTLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EE1C22828A2BE00E0337A /* MTLoginView.swift */; };
 		5B2EE1C52828A7C500E0337A /* MTTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EE1C42828A7C500E0337A /* MTTextField.swift */; };
+		5B2EE1C72828BA2400E0337A /* MTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EE1C62828BA2400E0337A /* MTButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		5B2EE1BF2828A1B700E0337A /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		5B2EE1C22828A2BE00E0337A /* MTLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTLoginView.swift; sourceTree = "<group>"; };
 		5B2EE1C42828A7C500E0337A /* MTTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTTextField.swift; sourceTree = "<group>"; };
+		5B2EE1C62828BA2400E0337A /* MTButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			children = (
 				5B2EE1C22828A2BE00E0337A /* MTLoginView.swift */,
 				5B2EE1C42828A7C500E0337A /* MTTextField.swift */,
+				5B2EE1C62828BA2400E0337A /* MTButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			files = (
 				5B2EE18B2824C2E700E0337A /* ViewController.swift in Sources */,
 				5B2EE1C32828A2BE00E0337A /* MTLoginView.swift in Sources */,
+				5B2EE1C72828BA2400E0337A /* MTButton.swift in Sources */,
 				5B2EE1872824C2E700E0337A /* AppDelegate.swift in Sources */,
 				5B2EE1C52828A7C500E0337A /* MTTextField.swift in Sources */,
 				5B2EE1C02828A1B700E0337A /* LoginVC.swift in Sources */,
