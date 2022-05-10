@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TabBarVC.swift
 //  MovieTracker
 //
 //  Created by Aleksey on 5/5/22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TabBarVC: UITabBarController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()

@@ -20,11 +20,27 @@ class LoginVC: UIViewController {
 	}
 	
 	
+	private func handleSignIn() {
+		let appTabBar = TabBarVC()
+		appTabBar.modalPresentationStyle = .fullScreen
+		present(appTabBar, animated: true, completion: nil)
+		#warning("memory management - when logout, review app navigation")
+	}
+	
+	
+	@objc private func signInTapped() {
+		//TODO: - Network Login request
+		handleSignIn()
+	}
+	
+	
 	private func configureUI() {
 		view.backgroundColor = .systemBackground
 		
 		view.addSubview(loginView)
 		view.addSubview(signInButton)
+		
+		signInButton.addTarget(self, action: #selector(signInTapped), for: .touchUpInside)
 		
 		let padding: CGFloat = 16
 		

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5B2EE1872824C2E700E0337A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EE1862824C2E700E0337A /* AppDelegate.swift */; };
-		5B2EE18B2824C2E700E0337A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EE18A2824C2E700E0337A /* ViewController.swift */; };
+		5B2EE18B2824C2E700E0337A /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EE18A2824C2E700E0337A /* TabBarVC.swift */; };
 		5B2EE1902824C2E700E0337A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B2EE18F2824C2E700E0337A /* Assets.xcassets */; };
 		5B2EE1C02828A1B700E0337A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EE1BF2828A1B700E0337A /* LoginVC.swift */; };
 		5B2EE1C32828A2BE00E0337A /* MTLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EE1C22828A2BE00E0337A /* MTLoginView.swift */; };
@@ -19,7 +19,7 @@
 /* Begin PBXFileReference section */
 		5B2EE1832824C2E700E0337A /* MovieTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B2EE1862824C2E700E0337A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5B2EE18A2824C2E700E0337A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5B2EE18A2824C2E700E0337A /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		5B2EE18F2824C2E700E0337A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B2EE1942824C2E700E0337A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B2EE1BF2828A1B700E0337A /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 		5B2EE19B2824C3D000E0337A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5B2EE18A2824C2E700E0337A /* ViewController.swift */,
+				5B2EE18A2824C2E700E0337A /* TabBarVC.swift */,
 				5B2EE1BF2828A1B700E0337A /* LoginVC.swift */,
 			);
 			path = Controller;
@@ -163,7 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B2EE18B2824C2E700E0337A /* ViewController.swift in Sources */,
+				5B2EE18B2824C2E700E0337A /* TabBarVC.swift in Sources */,
 				5B2EE1C32828A2BE00E0337A /* MTLoginView.swift in Sources */,
 				5B2EE1C72828BA2400E0337A /* MTButton.swift in Sources */,
 				5B2EE1872824C2E700E0337A /* AppDelegate.swift in Sources */,
