@@ -14,6 +14,10 @@
 		5B2EE1C32828A2BE00E0337A /* MTLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EE1C22828A2BE00E0337A /* MTLoginView.swift */; };
 		5B2EE1C52828A7C500E0337A /* MTTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EE1C42828A7C500E0337A /* MTTextField.swift */; };
 		5B2EE1C72828BA2400E0337A /* MTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EE1C62828BA2400E0337A /* MTButton.swift */; };
+		5B2EE1CC2829F14D00E0337A /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EE1CB2829F14D00E0337A /* HomeVC.swift */; };
+		5B2EE1CE2829F17A00E0337A /* TVShowsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EE1CD2829F17A00E0337A /* TVShowsVC.swift */; };
+		5B2EE1D02829F19E00E0337A /* MoviesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EE1CF2829F19E00E0337A /* MoviesVC.swift */; };
+		5B2EE1D22829F1C200E0337A /* PeopleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EE1D12829F1C200E0337A /* PeopleVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		5B2EE1C22828A2BE00E0337A /* MTLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTLoginView.swift; sourceTree = "<group>"; };
 		5B2EE1C42828A7C500E0337A /* MTTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTTextField.swift; sourceTree = "<group>"; };
 		5B2EE1C62828BA2400E0337A /* MTButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTButton.swift; sourceTree = "<group>"; };
+		5B2EE1CB2829F14D00E0337A /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		5B2EE1CD2829F17A00E0337A /* TVShowsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowsVC.swift; sourceTree = "<group>"; };
+		5B2EE1CF2829F19E00E0337A /* MoviesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesVC.swift; sourceTree = "<group>"; };
+		5B2EE1D12829F1C200E0337A /* PeopleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +86,12 @@
 		5B2EE19B2824C3D000E0337A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5B2EE18A2824C2E700E0337A /* TabBarVC.swift */,
 				5B2EE1BF2828A1B700E0337A /* LoginVC.swift */,
+				5B2EE18A2824C2E700E0337A /* TabBarVC.swift */,
+				5B2EE1CB2829F14D00E0337A /* HomeVC.swift */,
+				5B2EE1CD2829F17A00E0337A /* TVShowsVC.swift */,
+				5B2EE1CF2829F19E00E0337A /* MoviesVC.swift */,
+				5B2EE1D12829F1C200E0337A /* PeopleVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -164,6 +176,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B2EE18B2824C2E700E0337A /* TabBarVC.swift in Sources */,
+				5B2EE1CE2829F17A00E0337A /* TVShowsVC.swift in Sources */,
+				5B2EE1D02829F19E00E0337A /* MoviesVC.swift in Sources */,
+				5B2EE1D22829F1C200E0337A /* PeopleVC.swift in Sources */,
+				5B2EE1CC2829F14D00E0337A /* HomeVC.swift in Sources */,
 				5B2EE1C32828A2BE00E0337A /* MTLoginView.swift in Sources */,
 				5B2EE1C72828BA2400E0337A /* MTButton.swift in Sources */,
 				5B2EE1872824C2E700E0337A /* AppDelegate.swift in Sources */,
