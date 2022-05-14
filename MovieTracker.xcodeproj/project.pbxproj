@@ -18,6 +18,8 @@
 		5B2EE1CE2829F17A00E0337A /* TVShowsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EE1CD2829F17A00E0337A /* TVShowsVC.swift */; };
 		5B2EE1D02829F19E00E0337A /* MoviesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EE1CF2829F19E00E0337A /* MoviesVC.swift */; };
 		5B2EE1D22829F1C200E0337A /* PeopleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EE1D12829F1C200E0337A /* PeopleVC.swift */; };
+		5BA1D579282F3D1D0001C5E3 /* MDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA1D578282F3D1D0001C5E3 /* MDBManager.swift */; };
+		5BA1D57B282F3D290001C5E3 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA1D57A282F3D290001C5E3 /* Session.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		5B2EE1CD2829F17A00E0337A /* TVShowsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowsVC.swift; sourceTree = "<group>"; };
 		5B2EE1CF2829F19E00E0337A /* MoviesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesVC.swift; sourceTree = "<group>"; };
 		5B2EE1D12829F1C200E0337A /* PeopleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleVC.swift; sourceTree = "<group>"; };
+		5BA1D578282F3D1D0001C5E3 /* MDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDBManager.swift; sourceTree = "<group>"; };
+		5BA1D57A282F3D290001C5E3 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 		5B2EE1852824C2E700E0337A /* MovieTracker */ = {
 			isa = PBXGroup;
 			children = (
+				5BA1D577282F3CB90001C5E3 /* Networking */,
 				5B2EE1862824C2E700E0337A /* AppDelegate.swift */,
 				5B2EE1C12828A29B00E0337A /* View */,
 				5B2EE19B2824C3D000E0337A /* Controller */,
@@ -104,6 +109,15 @@
 				5B2EE1C62828BA2400E0337A /* MTButton.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		5BA1D577282F3CB90001C5E3 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				5BA1D578282F3D1D0001C5E3 /* MDBManager.swift */,
+				5BA1D57A282F3D290001C5E3 /* Session.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +197,8 @@
 				5B2EE1C32828A2BE00E0337A /* MTLoginView.swift in Sources */,
 				5B2EE1C72828BA2400E0337A /* MTButton.swift in Sources */,
 				5B2EE1872824C2E700E0337A /* AppDelegate.swift in Sources */,
+				5BA1D57B282F3D290001C5E3 /* Session.swift in Sources */,
+				5BA1D579282F3D1D0001C5E3 /* MDBManager.swift in Sources */,
 				5B2EE1C52828A7C500E0337A /* MTTextField.swift in Sources */,
 				5B2EE1C02828A1B700E0337A /* LoginVC.swift in Sources */,
 			);
