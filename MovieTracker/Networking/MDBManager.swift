@@ -15,10 +15,12 @@ class MDBManager {
 	static private let api_key = "64220f6c5aefcbcea6bded475e131e43"
 	
 	private var requestToken = ""
+	var sessionId = ""
 	
 	
 	enum EndPoint {
 		case getRequestToken
+		case createSession
 		
 		
 		//TODO: - review access control
@@ -30,8 +32,11 @@ class MDBManager {
 			switch self {
 			case .getRequestToken:
 				return EndPoint.baseUrl + "/authentication/token/new" + EndPoint.apiKeyParameter
+			case .createSession:
+				return EndPoint.baseUrl + "/authentication/session/new" + EndPoint.apiKeyParameter
 			}
 		}
+		
 		
 		var url: URL {
 			return URL(string: stringURL)!
@@ -57,6 +62,34 @@ class MDBManager {
 	
 	
 	//MARK: Private
+	
+	private func createSession(with requestToken: String, then  handler: @escaping (Result<SessionResponse, Error>) -> Void) {
+		
+		var request = URLRequest(url: EndPoint.createSession.url)
+		request.httpMethod = "POST"
+		request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+		// changing the approach by passing token from previous get requst
+		request.httpBody = try! JSONEncoder().encode(SessionRequest(requestToken: requestToken))
+		
+		let task = URLSession.shared.dataTask(with: request) { data, response, error in
+			guard let data = data, error == nil else {
+				handler(.failure(error!))
+				return
+			}
+			
+			do {
+				let result = try JSONDecoder().decode(SessionResponse.self, from: data)
+				print("\(#function) - \(result)")
+				// save with user defaults
+				self.sessionId = result.sessionId
+				handler(.success(result))
+			} catch {
+				handler(.failure(error))
+			}
+		}
+		task.resume()
+	}
+	
 	
 	private func getRequest<ResponseType: Decodable>(for url: URL, responseType: ResponseType.Type, then handler: @escaping (Result<ResponseType, Error>) -> Void) {
 		

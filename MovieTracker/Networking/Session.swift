@@ -19,3 +19,23 @@ struct TokenResponse: Codable {
 		case requestToken = "request_token"
 	}
 }
+
+
+struct SessionRequest: Codable {
+	let requestToken: String
+	
+	enum CodingKeys: String, CodingKey {
+		case requestToken = "request_token"
+	}
+}
+
+
+struct SessionResponse: Codable {
+	let success: Bool
+	let sessionId: String
+	
+	enum CodingKeys: String, CodingKey {
+		case success
+		case sessionId = "session_id"
+	}
+}
