@@ -20,6 +20,7 @@ class MDBManager {
 	
 	enum EndPoint {
 		case getRequestToken
+		case authorizeTokenWithCredentials
 		case createSession
 		
 		
@@ -32,6 +33,8 @@ class MDBManager {
 			switch self {
 			case .getRequestToken:
 				return EndPoint.baseUrl + "/authentication/token/new" + EndPoint.apiKeyParameter
+			case .authorizeTokenWithCredentials:
+				return EndPoint.baseUrl + "/authentication/token/validate_with_login" + EndPoint.apiKeyParameter
 			case .createSession:
 				return EndPoint.baseUrl + "/authentication/session/new" + EndPoint.apiKeyParameter
 			}
@@ -59,9 +62,36 @@ class MDBManager {
 		}
 	}
 	
-	
-	
+		
 	//MARK: Private
+	
+	private func authorize(token: String, with username: String, and password: String, then handler: @escaping (Result<LoginResponse, Error>) -> Void) {
+		//get the token authorization
+		//create the session
+		
+		var request = URLRequest(url: EndPoint.authorizeTokenWithCredentials.url)
+		request.httpMethod = "POST"
+		request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+		request.httpBody = try! JSONEncoder().encode(LoginRequest(username: username, password: password, requestToken: token))
+		
+		let task = URLSession.shared.dataTask(with: request) { data, response, error in
+			guard let data = data, error == nil else {
+				handler(.failure(error!))
+				return
+			}
+			
+			do {
+				let result = try JSONDecoder().decode(LoginResponse.self, from: data)
+				print("\(#function) - \(result)")
+				handler(.success(result))
+			} catch {
+				print("login with - error from catch \(error)")
+				handler(.failure(error))
+			}
+		}
+		task.resume()
+	}
+	
 	
 	private func createSession(with requestToken: String, then  handler: @escaping (Result<SessionResponse, Error>) -> Void) {
 		
@@ -90,6 +120,10 @@ class MDBManager {
 		task.resume()
 	}
 	
+	
+	//MARK: - Generic GET/POST requests
+	
+	//TODO: - create generic post request
 	
 	private func getRequest<ResponseType: Decodable>(for url: URL, responseType: ResponseType.Type, then handler: @escaping (Result<ResponseType, Error>) -> Void) {
 		

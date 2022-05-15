@@ -18,6 +18,7 @@
 		5B2EE1CE2829F17A00E0337A /* TVShowsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EE1CD2829F17A00E0337A /* TVShowsVC.swift */; };
 		5B2EE1D02829F19E00E0337A /* MoviesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EE1CF2829F19E00E0337A /* MoviesVC.swift */; };
 		5B2EE1D22829F1C200E0337A /* PeopleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EE1D12829F1C200E0337A /* PeopleVC.swift */; };
+		5B666004283094BF00BAF1B9 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B666003283094BF00BAF1B9 /* Login.swift */; };
 		5BA1D579282F3D1D0001C5E3 /* MDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA1D578282F3D1D0001C5E3 /* MDBManager.swift */; };
 		5BA1D57B282F3D290001C5E3 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA1D57A282F3D290001C5E3 /* Session.swift */; };
 /* End PBXBuildFile section */
@@ -36,6 +37,7 @@
 		5B2EE1CD2829F17A00E0337A /* TVShowsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowsVC.swift; sourceTree = "<group>"; };
 		5B2EE1CF2829F19E00E0337A /* MoviesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesVC.swift; sourceTree = "<group>"; };
 		5B2EE1D12829F1C200E0337A /* PeopleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleVC.swift; sourceTree = "<group>"; };
+		5B666003283094BF00BAF1B9 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		5BA1D578282F3D1D0001C5E3 /* MDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDBManager.swift; sourceTree = "<group>"; };
 		5BA1D57A282F3D290001C5E3 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,6 +118,7 @@
 			children = (
 				5BA1D578282F3D1D0001C5E3 /* MDBManager.swift */,
 				5BA1D57A282F3D290001C5E3 /* Session.swift */,
+				5B666003283094BF00BAF1B9 /* Login.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 			files = (
 				5B2EE18B2824C2E700E0337A /* TabBarVC.swift in Sources */,
 				5B2EE1CE2829F17A00E0337A /* TVShowsVC.swift in Sources */,
+				5B666004283094BF00BAF1B9 /* Login.swift in Sources */,
 				5B2EE1D02829F19E00E0337A /* MoviesVC.swift in Sources */,
 				5B2EE1D22829F1C200E0337A /* PeopleVC.swift in Sources */,
 				5B2EE1CC2829F14D00E0337A /* HomeVC.swift in Sources */,
