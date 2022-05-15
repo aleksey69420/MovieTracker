@@ -20,6 +20,8 @@ class MDBManager {
 	enum EndPoint {
 		case getRequestToken
 		
+		
+		//TODO: - review access control
 		static let baseUrl = "https://api.themoviedb.org/3"
 		static let apiKeyParameter = "?api_key=\(MDBManager.api_key)"
 		
@@ -37,23 +39,42 @@ class MDBManager {
 	}
 	
 	
-	func getRequestToken(completion: @escaping (Result<Bool, Error>) -> Void) {
-		let task = URLSession.shared.dataTask(with: EndPoint.getRequestToken.url) { data, response, error in
+		
+	func getRequestToken(handler: @escaping (Result<TokenResponse, Error>) -> Void) {
+		let url = EndPoint.getRequestToken.url
+		getRequest(for: url, responseType: TokenResponse.self) { result in
+			switch result {
+			case .success(let response):
+				self.requestToken = response.requestToken
+				handler(.success(response))
+			case .failure(let error):
+				print("error parsing the request token \(error.localizedDescription)")
+				handler(.failure(error))
+			}
+		}
+	}
+	
+	
+	
+	//MARK: Private
+	
+	private func getRequest<ResponseType: Decodable>(for url: URL, responseType: ResponseType.Type, then handler: @escaping (Result<ResponseType, Error>) -> Void) {
+		
+		let task = URLSession.shared.dataTask(with: url) { data, response, error in
 			
-			//TODO: - response status 400 (doc example) has different reponse json structure
+			//TODO: - check the response code
+			
 			guard let data = data, error == nil else {
-				completion(.failure(error!))
+				handler(.failure(error!))
 				return
 			}
-
+			
 			do {
-				let response = try JSONDecoder().decode(TokenResponse.self, from: data)
+				let response = try JSONDecoder().decode(ResponseType.self, from: data)
 				print("\(#function) - \(response)")
-				self.requestToken = response.requestToken
-				completion(.success(true))
+				handler(.success(response))
 			} catch {
-				print("Error parsing the request token \(error.localizedDescription)")
-				completion(.failure(error))
+				handler(.failure(error))
 			}
 		}
 		task.resume()
