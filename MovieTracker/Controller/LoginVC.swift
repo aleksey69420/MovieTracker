@@ -29,8 +29,15 @@ class LoginVC: UIViewController {
 	
 	
 	@objc private func signInTapped() {
-		//TODO: - Network Login request
-		handleSignIn()
+		MDBManager.shared.login(with: "kabishauTest", and: "kabishauTest") { result in
+			switch result {
+			case .success:
+				self.handleSignIn()
+			case .failure(let error):
+				//TODO: show alert with the error
+				break
+			}
+		}
 	}
 	
 	

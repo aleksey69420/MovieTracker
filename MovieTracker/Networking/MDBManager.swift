@@ -47,8 +47,37 @@ class MDBManager {
 	}
 	
 	
+	func login(with username: String, and password: String, then handler: @escaping (Result<Bool, Error>) -> Void) {
 		
-	func getRequestToken(handler: @escaping (Result<TokenResponse, Error>) -> Void) {
+		getRequestToken { result in
+			switch result {
+			case .success(let tokenResponse):
+				self.authorize(token: tokenResponse.requestToken, with: username, and: password) { result in
+					switch result {
+					case .success(let loginResponse):
+						self.createSession(with: loginResponse.requestToken) { result in
+							switch result {
+							case .success(let sessionResponse):
+								self.sessionId = sessionResponse.sessionId
+								DispatchQueue.main.async { handler(.success(true)) }
+							case .failure(let error):
+								DispatchQueue.main.async { handler(.failure(error)) }
+							}
+						}
+					case .failure(let error):
+						DispatchQueue.main.async { handler(.failure(error)) }
+					}
+				}
+			case .failure(let error):
+				DispatchQueue.main.async { handler(.failure(error)) }
+			}
+		}
+	}
+	
+	
+	//MARK: Private
+	
+	private func getRequestToken(handler: @escaping (Result<TokenResponse, Error>) -> Void) {
 		let url = EndPoint.getRequestToken.url
 		getRequest(for: url, responseType: TokenResponse.self) { result in
 			switch result {
@@ -62,8 +91,6 @@ class MDBManager {
 		}
 	}
 	
-		
-	//MARK: Private
 	
 	private func authorize(token: String, with username: String, and password: String, then handler: @escaping (Result<LoginResponse, Error>) -> Void) {
 		//get the token authorization
