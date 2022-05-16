@@ -109,10 +109,10 @@ class MDBManager {
 			
 			do {
 				let result = try JSONDecoder().decode(LoginResponse.self, from: data)
-				print("\(#function) - \(result)")
+				Log.info("JSON Decoded into: \(result)")
 				handler(.success(result))
 			} catch {
-				print("login with - error from catch \(error)")
+				Log.error("Parsing JSON error")
 				handler(.failure(error))
 			}
 		}
@@ -136,7 +136,7 @@ class MDBManager {
 			
 			do {
 				let result = try JSONDecoder().decode(SessionResponse.self, from: data)
-				print("\(#function) - \(result)")
+				Log.info("JSON Decoded into: \(result)")
 				// save with user defaults
 				self.sessionId = result.sessionId
 				handler(.success(result))
@@ -165,7 +165,7 @@ class MDBManager {
 			
 			do {
 				let response = try JSONDecoder().decode(ResponseType.self, from: data)
-				print("\(#function) - \(response)")
+				Log.info("JSON Decoded into: \(response)")
 				handler(.success(response))
 			} catch {
 				handler(.failure(error))

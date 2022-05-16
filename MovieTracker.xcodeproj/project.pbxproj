@@ -21,6 +21,7 @@
 		5B666004283094BF00BAF1B9 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B666003283094BF00BAF1B9 /* Login.swift */; };
 		5BA1D579282F3D1D0001C5E3 /* MDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA1D578282F3D1D0001C5E3 /* MDBManager.swift */; };
 		5BA1D57B282F3D290001C5E3 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA1D57A282F3D290001C5E3 /* Session.swift */; };
+		5BE6D9C12831DB0C00FD603F /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE6D9C02831DB0C00FD603F /* Log.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		5B666003283094BF00BAF1B9 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		5BA1D578282F3D1D0001C5E3 /* MDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDBManager.swift; sourceTree = "<group>"; };
 		5BA1D57A282F3D290001C5E3 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		5BE6D9C02831DB0C00FD603F /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 			children = (
 				5B2EE18F2824C2E700E0337A /* Assets.xcassets */,
 				5B2EE1942824C2E700E0337A /* Info.plist */,
+				5BE6D9C02831DB0C00FD603F /* Log.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				5B2EE1CC2829F14D00E0337A /* HomeVC.swift in Sources */,
 				5B2EE1C32828A2BE00E0337A /* MTLoginView.swift in Sources */,
 				5B2EE1C72828BA2400E0337A /* MTButton.swift in Sources */,
+				5BE6D9C12831DB0C00FD603F /* Log.swift in Sources */,
 				5B2EE1872824C2E700E0337A /* AppDelegate.swift in Sources */,
 				5BA1D57B282F3D290001C5E3 /* Session.swift in Sources */,
 				5BA1D579282F3D1D0001C5E3 /* MDBManager.swift in Sources */,
