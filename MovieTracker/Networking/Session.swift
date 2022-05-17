@@ -39,3 +39,17 @@ struct SessionResponse: Codable {
 		case sessionId = "session_id"
 	}
 }
+
+
+struct SessionRemoveRequest: Codable {
+	let sessionId: String
+	
+	enum CodingKeys: String, CodingKey {
+		case sessionId = "session_id"
+	}
+}
+
+
+struct SessionRemoveResponse: Codable {
+	let success: Bool
+}

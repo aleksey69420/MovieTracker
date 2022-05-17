@@ -22,6 +22,7 @@ class MDBManager {
 		case getRequestToken
 		case authorizeTokenWithCredentials
 		case createSession
+		case logout
 		
 		
 		//TODO: - review access control
@@ -37,6 +38,8 @@ class MDBManager {
 				return EndPoint.baseUrl + "/authentication/token/validate_with_login" + EndPoint.apiKeyParameter
 			case .createSession:
 				return EndPoint.baseUrl + "/authentication/session/new" + EndPoint.apiKeyParameter
+			case .logout:
+				return EndPoint.baseUrl + "/authentication/session" + EndPoint.apiKeyParameter
 			}
 		}
 		
@@ -72,6 +75,34 @@ class MDBManager {
 				DispatchQueue.main.async { handler(.failure(error)) }
 			}
 		}
+	}
+	
+	
+	func logout() {
+		
+		let url = EndPoint.logout.url
+		var request = URLRequest(url: url)
+		request.httpMethod = "DELETE"
+		request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+		request.httpBody = try! JSONEncoder().encode(SessionRemoveRequest(sessionId: sessionId))
+		
+		
+		let task = URLSession.shared.dataTask(with: request) { data, response, error in
+			guard let data = data, error == nil else { return }
+			
+			do {
+				let response = try JSONDecoder().decode(SessionRemoveResponse.self, from: data)
+				//currently not handling "false" logout result - is required since no error above?
+				Log.info("JSON Decoded - \(response.success)")
+				DispatchQueue.main.async {
+					self.requestToken = ""
+					//TODO: - Navigate back LoginVC
+				}
+			} catch {
+				Log.error("Parsing JSON error")
+			}
+		}
+		task.resume()
 	}
 	
 	
