@@ -15,7 +15,14 @@ class MDBManager {
 	static private let api_key = "64220f6c5aefcbcea6bded475e131e43"
 	
 	private var requestToken = ""
-	var sessionId = ""
+	private var sessionId: String? {
+		return UserDefaults.standard.string(forKey: "sessionId")
+	}
+
+	
+	var isSigned: Bool {
+		sessionId != nil
+	}
 	
 	
 	enum EndPoint {
@@ -61,7 +68,7 @@ class MDBManager {
 						self.createSession(with: loginResponse.requestToken) { result in
 							switch result {
 							case .success(let sessionResponse):
-								self.sessionId = sessionResponse.sessionId
+								UserDefaults.standard.setValue(sessionResponse.sessionId, forKey: "sessionId")
 								DispatchQueue.main.async { handler(.success(true)) }
 							case .failure(let error):
 								DispatchQueue.main.async { handler(.failure(error)) }
@@ -84,7 +91,7 @@ class MDBManager {
 		var request = URLRequest(url: url)
 		request.httpMethod = "DELETE"
 		request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-		request.httpBody = try! JSONEncoder().encode(SessionRemoveRequest(sessionId: sessionId))
+		request.httpBody = try! JSONEncoder().encode(SessionRemoveRequest(sessionId: sessionId!))
 		
 		
 		let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -169,7 +176,8 @@ class MDBManager {
 				let result = try JSONDecoder().decode(SessionResponse.self, from: data)
 				Log.info("JSON Decoded into: \(result)")
 				// save with user defaults
-				self.sessionId = result.sessionId
+				//UserDefaults.standard.setValue(result.sessionId, forKey: "sessionId")
+				//self.sessionId = result.sessionId
 				handler(.success(result))
 			} catch {
 				handler(.failure(error))

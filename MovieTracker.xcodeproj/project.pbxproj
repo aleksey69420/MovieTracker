@@ -74,8 +74,8 @@
 		5B2EE1852824C2E700E0337A /* MovieTracker */ = {
 			isa = PBXGroup;
 			children = (
-				5BA1D577282F3CB90001C5E3 /* Networking */,
 				5B2EE1862824C2E700E0337A /* AppDelegate.swift */,
+				5BA1D577282F3CB90001C5E3 /* Networking */,
 				5B2EE1C12828A29B00E0337A /* View */,
 				5B2EE19B2824C3D000E0337A /* Controller */,
 				5B2EE19A2824C3C000E0337A /* Support */,
