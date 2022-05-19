@@ -22,6 +22,7 @@
 		5BA1D579282F3D1D0001C5E3 /* MDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA1D578282F3D1D0001C5E3 /* MDBManager.swift */; };
 		5BA1D57B282F3D290001C5E3 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA1D57A282F3D290001C5E3 /* Session.swift */; };
 		5BE6D9C12831DB0C00FD603F /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE6D9C02831DB0C00FD603F /* Log.swift */; };
+		5BE79F8E2835E3C100D08D8B /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE79F8D2835E3C100D08D8B /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		5BA1D578282F3D1D0001C5E3 /* MDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDBManager.swift; sourceTree = "<group>"; };
 		5BA1D57A282F3D290001C5E3 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		5BE6D9C02831DB0C00FD603F /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		5BE79F8D2835E3C100D08D8B /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				5B2EE1862824C2E700E0337A /* AppDelegate.swift */,
+				5BE79F8C2835E32E00D08D8B /* Model */,
 				5BA1D577282F3CB90001C5E3 /* Networking */,
 				5B2EE1C12828A29B00E0337A /* View */,
 				5B2EE19B2824C3D000E0337A /* Controller */,
@@ -124,6 +127,14 @@
 				5B666003283094BF00BAF1B9 /* Login.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		5BE79F8C2835E32E00D08D8B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5BE79F8D2835E3C100D08D8B /* Movie.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +220,7 @@
 				5BA1D579282F3D1D0001C5E3 /* MDBManager.swift in Sources */,
 				5B2EE1C52828A7C500E0337A /* MTTextField.swift in Sources */,
 				5B2EE1C02828A1B700E0337A /* LoginVC.swift in Sources */,
+				5BE79F8E2835E3C100D08D8B /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
