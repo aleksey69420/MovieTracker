@@ -14,6 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		
+		registerForNotification()
+		
 		window = UIWindow(frame: UIScreen.main.bounds)
 		setRootVC()
 		window?.makeKeyAndVisible()
@@ -29,6 +31,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		} else {
 			window?.rootViewController = LoginVC()
 		}
+	}
+	
+	
+	private func registerForNotification() {
+		NotificationCenter.default.addObserver(self, selector: #selector(didLogout), name: Notification.Name("logout"), object: nil)
+	}
+
+	
+	@objc private func didLogout() {
+		Log.info("Did Log out")
+		setRootVC()
 	}
 }
 

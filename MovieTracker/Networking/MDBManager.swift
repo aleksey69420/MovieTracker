@@ -103,7 +103,8 @@ class MDBManager {
 				Log.info("JSON Decoded - \(response.success)")
 				DispatchQueue.main.async {
 					self.requestToken = ""
-					//TODO: - Navigate back LoginVC
+					UserDefaults.standard.removeObject(forKey: "sessionId")
+					NotificationCenter.default.post(name: NSNotification.Name("logout"), object: nil)
 				}
 			} catch {
 				Log.error("Parsing JSON error")
