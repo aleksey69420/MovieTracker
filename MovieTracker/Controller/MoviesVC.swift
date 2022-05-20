@@ -13,5 +13,14 @@ class MoviesVC: UIViewController {
         super.viewDidLoad()
 
 		view.backgroundColor = .systemBackground
+		
+		MDBManager.shared.getFavoriteMovies { result in
+			switch result {
+			case .success(_):
+				Log.info("Favorites Movies arrived")
+			case .failure(let error):
+				Log.error("Favorite Movies Error - \(error)")
+			}
+		}
     }
 }

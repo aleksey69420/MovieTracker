@@ -30,11 +30,13 @@ class MDBManager {
 		case authorizeTokenWithCredentials
 		case createSession
 		case logout
+		case favoriteMovie
 		
 		
 		//TODO: - review access control
 		static let baseUrl = "https://api.themoviedb.org/3"
 		static let apiKeyParameter = "?api_key=\(MDBManager.api_key)"
+		static let sessionIdParameter = "&session_id=\(MDBManager.shared.sessionId ?? "")"
 		
 		
 		var stringURL: String {
@@ -47,6 +49,8 @@ class MDBManager {
 				return EndPoint.baseUrl + "/authentication/session/new" + EndPoint.apiKeyParameter
 			case .logout:
 				return EndPoint.baseUrl + "/authentication/session" + EndPoint.apiKeyParameter
+			case .favoriteMovie:
+				return EndPoint.baseUrl + "/account/account_id/favorite/movies" + EndPoint.apiKeyParameter + EndPoint.sessionIdParameter
 			}
 		}
 		
@@ -111,6 +115,27 @@ class MDBManager {
 			}
 		}
 		task.resume()
+	}
+	
+	
+	//MARK: - Account Info
+	
+	func getFavoriteMovies(handler: @escaping (Result<[Movie], Error>) -> Void) {
+		
+		let url = EndPoint.favoriteMovie.url
+		
+		getRequest(for: url, responseType: MovieResults.self) { result in
+			switch result {
+			case .success(let result):
+				DispatchQueue.main.async {
+					handler(.success(result.results))
+				}
+			case .failure(let error):
+				DispatchQueue.main.async {
+					handler(.failure(error))
+				}
+			}
+		}
 	}
 	
 	
