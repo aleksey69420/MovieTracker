@@ -31,6 +31,7 @@ class MDBManager {
 		case createSession
 		case logout
 		case favoriteMovie
+		case movieWatchlist
 		
 		
 		//TODO: - review access control
@@ -51,6 +52,8 @@ class MDBManager {
 				return EndPoint.baseUrl + "/authentication/session" + EndPoint.apiKeyParameter
 			case .favoriteMovie:
 				return EndPoint.baseUrl + "/account/account_id/favorite/movies" + EndPoint.apiKeyParameter + EndPoint.sessionIdParameter
+			case .movieWatchlist:
+				return EndPoint.baseUrl + "/account/account_id/watchlist/movies" + EndPoint.apiKeyParameter + EndPoint.sessionIdParameter
 			}
 		}
 		
@@ -133,6 +136,23 @@ class MDBManager {
 			case .failure(let error):
 				DispatchQueue.main.async {
 					handler(.failure(error))
+				}
+			}
+		}
+	}
+	
+	
+	func getMoviesWatchlist(completion: @escaping (Result<[Movie], Error>) -> Void) {
+		let url = EndPoint.movieWatchlist.url
+		getRequest(for: url, responseType: MovieResults.self) { result in
+			switch result {
+			case .success(let results):
+				DispatchQueue.main.async {
+					completion(.success(results.results))
+				}
+			case .failure(let error):
+				DispatchQueue.main.async {
+					completion(.failure(error))
 				}
 			}
 		}

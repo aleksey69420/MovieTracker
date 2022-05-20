@@ -22,5 +22,15 @@ class MoviesVC: UIViewController {
 				Log.error("Favorite Movies Error - \(error)")
 			}
 		}
+		
+		
+		MDBManager.shared.getMoviesWatchlist { result in
+			switch result {
+			case .success(_):
+				Log.info("Movies Watchlist arrived")
+			case .failure(let error):
+				Log.error("Movies Watchlist Error - \(error)")
+			}
+		}
     }
 }
